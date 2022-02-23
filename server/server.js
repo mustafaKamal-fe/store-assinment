@@ -7,6 +7,8 @@ const cloudinary = require('cloudinary').v2;
 const appErrorHandler = require('./utils/errorHandler');
 const storeRouter = require('./routes/store/route');
 const connectToMongoDb = require('./utils/connectDB');
+const categoryRouter = require('./routes/category/route');
+const productRouter = require('./routes/products/route');
 
 // server setup
 const app = express();
@@ -29,7 +31,8 @@ cloudinary.config({
 
 // Routes
 app.use('/api/store', storeRouter);
-
+app.use('/api/category', categoryRouter);
+app.use('/api/product', productRouter);
 // App error handler
 app.use(appErrorHandler);
 
