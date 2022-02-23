@@ -12,6 +12,11 @@ import SideNavBar from './SideNavBar';
 
 const drawerWidth = 240;
 
+/**
+ * Wraps index page
+ * @param {*} props
+ * @returns
+ */
 function AppContainer(props) {
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -58,14 +63,13 @@ function AppContainer(props) {
 				component='nav'
 				sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
 				aria-label='mailbox folders'>
-				{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
 				<Drawer
 					container={container}
 					variant='temporary'
 					open={mobileOpen}
 					onClose={handleDrawerToggle}
 					ModalProps={{
-						keepMounted: true, // Better open performance on mobile.
+						keepMounted: true,
 					}}
 					sx={{
 						display: { xs: 'block', sm: 'none' },
