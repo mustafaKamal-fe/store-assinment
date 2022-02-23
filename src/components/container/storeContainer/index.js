@@ -12,6 +12,11 @@ import SideNavBar from './SideNavBar';
 
 const drawerWidth = 240;
 
+/**
+ * Wraps All pages exept index page
+ * @param {*} props
+ * @returns
+ */
 function StoreContainer(props) {
 	const { name } = props;
 	const { window } = props;

@@ -1,4 +1,11 @@
 const cloudinary = require('cloudinary').v2;
+
+/**
+ * Uploads images to cloudinary
+ * @param {*} req
+ * @param {*} _res
+ * @param {*} next
+ */
 async function uploadToCloudinary(req, _res, next) {
 	try {
 		const data = {

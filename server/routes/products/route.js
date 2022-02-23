@@ -6,8 +6,12 @@ const validateProductObject = require('./middlewares/validateProduct');
 const removeLogoFile = require('../../middlewares/removeLogoFile');
 const controller = require('./controller');
 
+/**
+ * Product API feature router
+ */
 const productRouter = express.Router();
 
+// post new product
 productRouter.post(
 	'/',
 	upload.single('photo'),
@@ -17,6 +21,6 @@ productRouter.post(
 	removeLogoFile,
 	controller.postProduct
 );
-
+// Get products
 productRouter.get('/', controller.getProduct);
 module.exports = productRouter;
