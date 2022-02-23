@@ -1,4 +1,4 @@
-export const initSingleStoreStyles = (logo) => {
+export const initSingleCategoryStyles = (logo) => {
 	return {
 		logo: {
 			display: 'flex',
@@ -13,11 +13,6 @@ export const initSingleStoreStyles = (logo) => {
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
 			backgroundOrigin: 'content-box',
-		},
-		description: {
-			margin: '3rem auto',
-			padding: '1rem',
-			width: '75%',
 		},
 	};
 };
