@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
  * @returns
  */
 function CustomAlert(props) {
-	const { severity, text, condition } = props;
+	const { severity, text, condition, width = '15%' } = props;
 
 	const [display, setDisplay] = useState(condition);
 
@@ -22,8 +22,9 @@ function CustomAlert(props) {
 			<Alert
 				sx={{
 					m: 'auto',
-					width: '15%',
+					width,
 					marginTop: '2rem',
+					border: '1px solid',
 				}}
 				severity={severity}>
 				{text}

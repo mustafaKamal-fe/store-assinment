@@ -6,7 +6,7 @@ const storage = multer.diskStorage({
 		cb(null, 'uploads');
 	},
 	filename: (req, _file, cb) => {
-		const logoFileName = `${req.body.name}-store-logo`;
+		const logoFileName = `${req.body.name}-image`;
 		cb(null, logoFileName);
 	},
 });

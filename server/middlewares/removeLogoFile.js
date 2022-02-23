@@ -5,7 +5,7 @@ const asyncRemoveFile = util.promisify(fs.unlink);
 async function removeLogoFile(req, res, next) {
 	// remove logo file from ./uploads dir
 	try {
-		const logoFileName = `${req.body.name}-store-logo`;
+		const logoFileName = `${req.body.name}-image`;
 
 		asyncRemoveFile(`./uploads/${logoFileName}`);
 		next();

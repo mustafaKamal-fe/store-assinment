@@ -10,6 +10,7 @@ const storeSchema = new mongoose.Schema({
 	},
 	description: String,
 	logo: String,
+	categories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'category' }],
 });
 
 const storeModel = mongoose.model('store', storeSchema);

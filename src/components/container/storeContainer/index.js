@@ -13,7 +13,7 @@ import SideNavBar from './SideNavBar';
 const drawerWidth = 240;
 
 function StoreContainer(props) {
-	const name = props.name;
+	const { name } = props;
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = React.useState(false);
 

@@ -1,10 +1,10 @@
 const express = require('express');
-const upload = require('./middlewares/uploadLogoFile');
+const upload = require('../../middlewares/uploadLogoFile');
 const controller = require('./controllers');
 const validateStoreObject = require('./middlewares/validateStore');
-const uploadToCloudinary = require('./middlewares/uploadToCloudinary');
+const uploadToCloudinary = require('../../middlewares/uploadToCloudinary');
 const saveStoreToDB = require('./middlewares/saveStoreToDB');
-const removeLogoFile = require('./middlewares/removeLogoFile');
+const removeLogoFile = require('../../middlewares/removeLogoFile');
 
 const storeRouter = express.Router();
 

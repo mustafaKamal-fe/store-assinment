@@ -8,7 +8,7 @@ async function addOneStore(data) {
 }
 
 async function getOneStore(id) {
-	const doc = await storeModel.findById(id).lean();
+	const doc = await storeModel.findById(id).populate('categories').lean();
 	return doc;
 }
 
@@ -18,6 +18,7 @@ async function paginateStores(req) {
 		.find()
 		.limit(limit * 1)
 		.skip((page - 1) * limit)
+		.populate('categories')
 		.lean();
 	const count = await storeModel.countDocuments();
 
