@@ -3,28 +3,21 @@ const { getOneStore, paginateStores } = require('../utils/storeCrud');
 async function getStore(req, res) {
 	let { page, limit } = req.query;
 
-	// With pagination
-	if (page && limit) {
-		try {
+	try {
+		// With pagination
+		if (page && limit) {
 			let data = await paginateStores(req);
 			res.status(200).json({ pagination: data });
-		} catch (error) {
-			res.status(500).send({
-				message: 'failure',
-				error,
-			});
-		}
-	} else {
-		// Single store fetch
-		try {
+		} else {
+			// Single store fetch
 			const store = await getOneStore(req.query.id);
 			res.status(200).json({ store });
-		} catch (error) {
-			res.status(500).send({
-				message: 'failure',
-				error,
-			});
 		}
+	} catch (error) {
+		res.status(500).send({
+			message: 'failure',
+			error,
+		});
 	}
 }
 async function postStore(req, res) {
