@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { Paper, Typography } from '@mui/material';
 import StoreContainer from '../../components/container/storeContainer';
 import { initSingleStoreStyles } from './styles';
+import AddCategory from './addCategory';
+import ListCategories from './listCategories/listCategories';
 
 function SingleStore({ store }) {
 	const styles = initSingleStoreStyles(store.logo);
@@ -15,6 +17,16 @@ function SingleStore({ store }) {
 			<Paper variant='outlined' sx={description}>
 				<Typography>{store.description}</Typography>
 			</Paper>
+
+			<Box
+				sx={{
+					display: 'flex',
+				}}>
+				{/* Add Category */}
+				<AddCategory store={store} />
+				{/* Display Categories */}
+				<ListCategories storeID={store._id} />
+			</Box>
 		</React.Fragment>
 	);
 }
